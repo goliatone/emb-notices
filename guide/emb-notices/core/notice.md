@@ -22,7 +22,9 @@ Or just go ahead, and render all notices:
     if(Notice::queued()) echo Notice::render();
 
 Which, in turn will call the default basic view:
-
+	
+	$messages = isset($messages) ? $messages : ${Notice::$view_var_name};
+	
     if (! empty($messages)) {
        $output = '';
         foreach ($messages as $type => $message) {
