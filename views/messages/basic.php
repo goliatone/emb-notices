@@ -11,7 +11,7 @@ if (! empty($messages)) {
     foreach ($messages as $type => $message) {
         foreach ($message as $notice) {
             $output .= '<div class="message closeable '.$notice->type.'">';
-			$output .= '<h4>'.$notice->header.'</h4>';
+			$output .= '<h4>'.ucwords($notice->header).'</h4>';
 			$output .= '<p>'.$notice->message.'</p>';
 			$output .= '</div>';
         }
